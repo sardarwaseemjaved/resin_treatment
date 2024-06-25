@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "resin-bound-gravel-treatment"
+  },
+  "targets": {
+    "resin-bound-gravel-treatment": {
+      "hosting": {
+        "resin-bound-gravel-treatment": [
+          "resin-bound-gravel-treatment"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

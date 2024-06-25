@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "resin-bound-gravel-treatment",
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

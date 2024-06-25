@@ -16,6 +16,7 @@ nav {
     display: flex;
     justify-content: center;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -26,12 +27,12 @@ nav a {
 }
 
 .hero {
-    background: url('assets/resin-bound-gravel.jpeg') no-repeat center center/cover;
+    background: url('assets/header.jpeg') no-repeat center center/cover;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #333;
     text-align: center;
 }
 
@@ -66,6 +67,7 @@ nav a {
     padding: 20px;
     flex: 1;
     text-align: center;
+    min-width: 200px; /* Ensure a minimum width for better layout */
 }
 
 .content .features div img,
@@ -107,6 +109,7 @@ nav a {
     margin: 10px 0;
 }
 
+/* Gallery styles */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -146,19 +149,91 @@ nav a {
     max-height: 90%;
 }
 
-.close {
+.close, .prev, .next {
     position: absolute;
-    top: 20px;
-    right: 35px;
+    top: 50%;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.close {
+    top: 20px;
+    right: 35px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .content .features div,
+    .content .benefits div {
+        flex: 1 1 calc(33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .content .features div,
+    .content .benefits div {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .gallery img {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 5px 0;
+    }
+
+    .hero {
+        height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .content .features div,
+    .content .benefits div {
+        flex: 1 1 calc(100% - 20px);
+    }
+
+    .gallery img {
+        width: calc(100% - 10px);
+    }
 }
